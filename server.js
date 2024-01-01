@@ -36,8 +36,8 @@
 
         app.get("/pokemon/:id", (req, res) => {
             const id = req.params.id
-            const pokemon = Monsters[id]
-            res.render("show.ejs", { pokemon, id })
+            const foundPokemon = Monsters[id]
+            res.render("show.ejs", { pokemon:foundPokemon, id })
             })
 
 
