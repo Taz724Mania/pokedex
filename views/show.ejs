@@ -14,9 +14,22 @@
     <!-- <#%console.log('ITS GENGAR',pokemon) %> -->
 
 
-
+    <div>
+        <h1><%=pokemon.name%></h1>
+    </div>
     <div>
     <img src="<%= pokemon.img %>" alt="<%= pokemon.name %>"/>
+    </div>
+    <div>
+        <ul>
+            <li><%=pokemon.type%></li>
+            <li>HP:<%=pokemon.stats.hp%></li>
+            <li>Attack:<%=pokemon.stats.attack%></li>
+            <li>Defense:<%=pokemon.stats.defense%></li>
+            <li>Special Attack:<%=pokemon.stats.spattack%></li>
+            <li>Special Defense:<%=pokemon.stats.spdefense%></li>
+            <li>Speed:<%=pokemon.stats.speed%></li>
+        </ul>
     </div>
 </body>
 </html>
