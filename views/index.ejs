@@ -14,7 +14,7 @@
         <% for (let i = 0; i < Monsters.length; i++){ %>
 
             <a href="/pokemon/<%= i %>"><img src="<%= Monsters[i].img %>"/></a>
-            <h3><%= Monsters[i].name %></h3>
+            <a href="/pokemon/<%= i %>"><%= Monsters[i].name %></a>
         <% } %>
        
     </ul>
