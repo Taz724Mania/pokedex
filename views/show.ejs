@@ -7,8 +7,10 @@
 </head>
 <body>
     <h1>List of individual Pokemon </h1>
-
-
+    
+    <form action="/pokemon/<%= pokemon._id %>?_method=DELETE" method="POST">
+        <button>Delete this Pokemon</button>
+      </form>
 
     <!-- how to use an ejs console.log -->
     <!-- <#%console.log('ITS GENGAR',pokemon) %> -->

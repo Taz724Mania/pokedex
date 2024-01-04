@@ -2,12 +2,18 @@
 
     const express = require("express")
     const Monsters = require("./models/pokemon.js")
+    const methodOverride = require("method-override")
+    const morgan = require("morgan")
+
+// App Object    
     const app = express()
 
 // Middleware
 
     app.use(express.static("public")) 
     app.use(express.urlencoded({extended: true}))
+    app.use(methodOverride("_method"))
+    app.use(morgan("dev"))
 
 // INDUCES
     // Index - Get - All Pokemon
@@ -21,13 +27,24 @@
         })
 
     // Destroy - Delete - Delete a Pokemon
-
+        app.delete("/pokemon/:id", (req, res) => {
+            // get the id
+            const id = req.params.id
+            // delete the pocket monster
+            Monsters.splice(id, 1)
+            // redirect to main page
+            res.redirect("/pokemon")
+        })
 
     // Update - Put - Changes a current Pokemon's Information
 
 
     // Create - Post - Uses the Form Data from New to list the Pokemon that was created
-
+        app.post("/pokemon", (req, res) => {
+            const body = req.body
+            Monsters.push(body)
+            res.redirect("/pokemon")
+        })
 
     // Edit - Get - Grabs information from a Pokemon to be Updated
 

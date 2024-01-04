@@ -1,15 +1,38 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1> New Pokemon</h1>
-    <form action="/pokemon" method="post" id="newform">
-    
-</form>
-</body>
+    <main>
+      <div>
+        <form action="/pokemon" method="post">
+          <fieldset>
+            <legend>Create a new Pokemon</legend>
+            <label
+              >Name:<input 
+              type="text"
+              name="name"
+              placeholder="name of pokemon"
+            /></label>
+            <label
+              >HP:<input
+              type="text"
+              name="hp"
+              placeholder="total health points"
+            /></label> 
+            <label
+            >Attack:<input 
+            type="text"
+            name="attack" 
+            placeholder="total attack damage"
+          /></label>
+            <label
+              >Defense:<input 
+              type="text"
+              name="defense" 
+              placeholder="total defense"
+            /></label>
+          </fieldset>
+          <button>Submit New Pokemon</button>
+        </form>
+      </div>
+    </main>
+  </body>
 </html>
