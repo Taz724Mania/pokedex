@@ -12,11 +12,23 @@
     </nav>
     <ul>
         <% for (let i = 0; i < Monsters.length; i++){ %>
+    
+            <a href="/pokemon/<%= i %>"><li><%= pokemon[i].name %>
+            </li></a>
+    
+            <form action="/pokemon/<%= i %>?_method=DELETE" method="post">
+                <input type="submit" value="delete">
+                <button type="submit">Delete</button>
+            </form>
+    
+        <% } %>
+        </ul>
+    <ul>
+        <% for (let i = 0; i < Monsters.length; i++){ %>
 
             <a href="/pokemon/<%= i %>"><img src="<%= Monsters[i].img %>"/></a>
             <a href="/pokemon/<%= i %>"><%= Monsters[i].name %></a>
         <% } %>
-       
     </ul>
    
     

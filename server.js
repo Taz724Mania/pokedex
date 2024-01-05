@@ -61,7 +61,11 @@
         })
 
     // Edit - Get - Grabs information from a Pokemon to be Updated
-
+        app.get("/:id/edit", (req, res) => {
+            const id = req.params.id
+            const pokemon = Monsters[id]
+            res.render("edit.js", {pokemon, id})
+        })
 
     // Show - Get - pulls up the information on the selected pokemon
 
