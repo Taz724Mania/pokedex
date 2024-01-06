@@ -3,37 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <%- include("./cssjs.ejs") %>
 </head>
 <body>
-    <h1>List of individual Pokemon </h1>
-    
-    <nav>
-       <a href="/pokemon/<%= id %>>"><button>Edit this Pokemon</button></a>
-     </nav>
-
-  
-
     <!-- how to use an ejs console.log -->
     <!-- <#%console.log('ITS GENGAR',pokemon) %> -->
 
-
-    <div>
+    <div class="showDiv">
         <h1><%=pokemon.name%></h1>
     </div>
-    <div>
+    <div class="showImg">
     <img src="<%= pokemon.img %>" alt="<%= pokemon.name %>"/>
     </div>
     <div>
         <ul>
-            <li><%=pokemon.type%></li>
-            <li>HP:<%=pokemon.stats.hp%></li>
-            <li>Attack:<%=pokemon.stats.attack%></li>
-            <li>Defense:<%=pokemon.stats.defense%></li>
-            <li>Special Attack:<%=pokemon.stats.spattack%></li>
-            <li>Special Defense:<%=pokemon.stats.spdefense%></li>
-            <li>Speed:<%=pokemon.stats.speed%></li>
+            <li class="showStats"><%=pokemon.type%></li>
+            <li class="showStats">HP:<%=pokemon.stats.hp%></li>
+            <li class="showStats">Attack:<%=pokemon.stats.attack%></li>
+            <li class="showStats">Defense:<%=pokemon.stats.defense%></li>
+            <li class="showStats">Special Attack:<%=pokemon.stats.spattack%></li>
+            <li class="showStats">Special Defense:<%=pokemon.stats.spdefense%></li>
+            <li class="showStats">Speed:<%=pokemon.stats.speed%></li>
         </ul>
     </div>
+
+    <nav class="editButton">
+       <a href="/pokemon/<%= id %>/edit"><button>Edit this Pokemon</button></a>
+     </nav>
+
 </body>
 </html>

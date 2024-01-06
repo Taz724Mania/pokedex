@@ -3,34 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <%- include("./cssjs.ejs") %>
 </head>
 <body>
-    <h1>List of all Pokemon</h1>
-    <nav>
+
+    <h1 class="all">List of all Pokemon</h1>
+
+    <nav class="indexNew">
+
         <a href="/pokemon/new"><button>Create a New Pokemon</button></a>
-    </nav>
-    <ul>
-        <% for (let i = 0; i < Monsters.length; i++){ %>
-    
-            <a href="/pokemon/<%= i %>"><li><%= pokemon[i].name %>
-            </li></a>
-    
-            <form action="/pokemon/<%= i %>?_method=DELETE" method="post">
-                <input type="submit" value="delete">
-                <button type="submit">Delete</button>
-            </form>
-    
-        <% } %>
-        </ul>
-    <ul>
+
+       </nav> 
+
+    <ul class="indexList">
+
         <% for (let i = 0; i < Monsters.length; i++){ %>
 
             <a href="/pokemon/<%= i %>"><img src="<%= Monsters[i].img %>"/></a>
+
             <a href="/pokemon/<%= i %>"><%= Monsters[i].name %></a>
+
+            <form action="/pokemon/<%= i %>?_method=DELETE" method="post">
+                <input type="submit" value="Delete this Pokemon">
+            </form>
+
         <% } %>
+
     </ul>
-   
-    
+        
 </body>
 </html>

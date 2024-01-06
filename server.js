@@ -60,21 +60,20 @@
             res.redirect("/pokemon")
         })
 
+
     // Edit - Get - Grabs information from a Pokemon to be Updated
-        app.get("/:id/edit", (req, res) => {
+        app.get("/pokemon/:id/edit", (req, res) => {
             const id = req.params.id
-            const pokemon = Monsters[id]
-            res.render("edit.js", {pokemon, id})
+            const foundPokemon = Monsters[id]
+            res.render("edit.ejs", {pokemon:foundPokemon, id})
         })
 
     // Show - Get - pulls up the information on the selected pokemon
-
         app.get("/pokemon/:id", (req, res) => {
             const id = req.params.id
             const foundPokemon = Monsters[id]
-            res.render("show.ejs", { pokemon:foundPokemon, id })
+            res.render("show.ejs", {pokemon:foundPokemon, id})
             })
-
 
 // App listener
     app.listen(3000, () => {

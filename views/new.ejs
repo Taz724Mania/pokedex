@@ -1,36 +1,37 @@
 <!DOCTYPE html>
+<%- include("./cssjs.ejs") %>
 <html lang="en">
     <main>
       <div>
         <form action="/pokemon" method="post">
-          <fieldset>
+          <fieldset class="outerBox">
             <legend>Create a new Pokemon</legend>
             <label
-              >Name:<input 
+              >Name:<input class="newForm"
               type="text"
               name="name"
               placeholder="name of pokemon"
             /></label>
             <label
-              >HP:<input
+              >HP:<input class="newForm"
               type="text"
               name="hp"
               placeholder="total health points"
             /></label> 
             <label
-            >Attack:<input 
+            >Attack:<input class="newForm"
             type="text"
             name="attack" 
             placeholder="total attack damage"
           /></label>
             <label
-              >Defense:<input 
+              >Defense:<input class="newForm"
               type="text"
               name="defense" 
               placeholder="total defense"
             /></label>
           </fieldset>
-          <button>Submit New Pokemon</button>
+          <button class="submitNew">Submit New Pokemon</button>
         </form>
       </div>
     </main>

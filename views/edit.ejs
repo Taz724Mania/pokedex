@@ -3,15 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Update <%= pokemon.name %></title>
-    <%- include("./cssjs.ejs") %>
+    <%- include("./cssjs.ejs")%>
   </head>
   <body>
-    <h1>Update <%= pokemon.name %></h1>
+    <h1 class="title">Update <%= pokemon.name %></h1>
+
     <form action="/pokemon/<%= id %>?_method=PUT" method="post">
-      <label>Name: <input type="text" name="name" value="<%= pokemon.name %>"/></label>
-      <label>HP: <input type="text" name="hp" value="<%= pokemon.stats.hp %>"/></label>
-      <label>Attack: <input type="text" name="attack" value="<%= pokemon.stats.attack%>"/></label>
+      <div class="update">
+      <label>Type: <input class="form" type="text" name="Type" value="<%= pokemon.type %>"/></label>
+
+      <label>HP: <input class="form" type="text" name="HP" value="<%= pokemon.stats.hp %>"/></label>
+
+      <label>Attack: <input class="form" type="text" name="Attack" value="<%= pokemon.stats.attack %>"/></label>
+
+      <label>Defense: <input class="form" type="text" name="Defense" value="<%= pokemon.stats.defense %>"/></label>
+
+      <label>Special Attack: <input class="form" type="text" name="Special Attack" value="<%= pokemon.stats.spattack %>"/></label>
+
+      <label>Special Defense: <input class="form" type="text" name="Special Defense" value="<%= pokemon.stats.spdefense %>"/></label>
+
+      <label>Speed: <input class="form" type="text" name="Speed" value="<%= pokemon.stats.speed %>"/></label>
+     </div>
       <input type="submit" value="Update <%= pokemon.name %>" />
     </form>
   </body>
